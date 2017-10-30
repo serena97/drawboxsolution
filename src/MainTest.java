@@ -7,8 +7,13 @@ import static org.junit.Assert.*;
  */
 public class MainTest {
 
+    /**
+     * Test that a 2x2 box resembles this:
+     *  ┌ ┐
+     *  └ ┘
+     */
     @Test
-    public void makesquare() throws Exception {
+    public void makesquare() {
         String[][] box = Main.makebox(2,2);
         String[] col0 = {Character.toString('\u250C') +" ", Character.toString('\u2514') + " "}; // topleft, bottomleft
         String[] col1 = {Character.toString('\u2510') + " ", Character.toString('\u2518') + " "}; //topright, bottomright
@@ -17,8 +22,14 @@ public class MainTest {
         assertArrayEquals(col1, box[1]);
     }
 
+    /**
+     * Test that a 3x4 box resembles this:
+     *  ┌ ─ ─ ┐
+     *  ╵     ╵
+     *  └ ─ ─ ┘
+     */
     @Test
-    public void makerectangle() throws Exception {
+    public void makerectangle() {
         String[][] box = Main.makebox(3,4);
         String[] col0 = {Character.toString('\u250C') +" ", Character.toString('\u2575') + " ", Character.toString('\u2514') + " "}; // topleft, pipe, bottomleft
         String[] col1 = {Character.toString('\u2500') + " ", "  ", Character.toString('\u2500') + " "}; //dash, whitespace, dash
